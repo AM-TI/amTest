@@ -1,5 +1,6 @@
 import React, {useState, useEffect}from 'react'
 import { CharactersPrint } from './Components/CharactersPrint';
+import { Btn } from './Components/Btn';
 
 export const DataCharacters = () => {
 
@@ -17,8 +18,8 @@ export const DataCharacters = () => {
 
 
     return(
-        <>
-            <div>
+        <> <div>
+            <Btn />
             {characters.map((characters) => (
                 <CharactersPrint characters={characters}/>
             ))}
