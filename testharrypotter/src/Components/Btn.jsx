@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import './Btn.css'
+import styles from './Btn.module.scss'
 
 export const Btn = () => {
     let history = useHistory();
@@ -12,7 +12,7 @@ export const Btn = () => {
         history.push('/students');
     }
     return (
-        <div className="btnS">
+        <div className={styles.btnS}>
             <button onClick = {handleClickStaff}>Staff</button>
             <button onClick = {handleClickStudents}>estudiantes</button>
         </div>
