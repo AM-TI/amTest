@@ -7,7 +7,7 @@ export const Elements = () => {
   return (
     <>
       <div className={style.btnfixsed}>
-        <button className={style.btnFavorites}>
+        <button className={style.btnFavorites} >
           FAVORITOS  
           <img src={favoriteslist} alt="favoritesList" />
         </button>
