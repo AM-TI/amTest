@@ -18,7 +18,6 @@ export const Students = () =>{
     return (
        
         <div>
-            <Btn />
             {students.map((characters) => (
                 <CharactersPrint characters={characters}/>
             ))}
