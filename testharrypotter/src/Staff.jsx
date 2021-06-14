@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
-import { Btn } from './Components/Btn';
-import { CharactersPrint } from './Components/CharactersPrint';
+import styles from "./scss/Staff.module.scss";
+import { CardsPrint } from './Components/CardsPrint';
 
 export const Staff = () =>{
     
@@ -17,10 +17,10 @@ export const Staff = () =>{
     }
     return (
        
-        <div>
+        <div className={styles.dataStaff}>
             
             {staff.map((characters) => (
-                <CharactersPrint characters={characters}/>
+                <CardsPrint characters={characters}/>
             ))}
             </div>
     )

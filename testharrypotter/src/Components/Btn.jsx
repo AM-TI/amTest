@@ -13,8 +13,8 @@ export const Btn = () => {
     }
     return (
         <div className={styles.btnS}>
-            <button onClick = {handleClickStaff}>Staff</button>
-            <button onClick = {handleClickStudents}>estudiantes</button>
+            <button onClick = {handleClickStudents}>ESTUDIANTES</button>
+            <button onClick = {handleClickStaff}>STAFF</button>
         </div>
     )
 }

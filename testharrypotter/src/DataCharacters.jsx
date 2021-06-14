@@ -1,28 +1,27 @@
-import React, {useState, useEffect}from 'react'
-import { CharactersPrint } from './Components/CharactersPrint';
+import React, { useState, useEffect } from "react";
+import { CardsPrint } from "./Components/CardsPrint";
+import styles from "./scss/DataCharacters.module.scss";
 
 export const DataCharacters = () => {
+  const [characters, setProducts] = useState([]);
 
-    const [characters, setProducts] = useState([]);
+  useEffect(() => {
+    getCharacters();
+  }, []);
 
-    useEffect(() => {
-        getCharacters();
-    }, [])
-    
-    const getCharacters = async () => {
-        const data = await fetch('http://localhost:3001/characters');
-        const charactersData = await data.json();
-        setProducts(charactersData);
-    }
+  const getCharacters = async () => {
+    const data = await fetch("http://localhost:3001/characters");
+    const charactersData = await data.json();
+    setProducts(charactersData);
+  };
 
-
-    return(
-        <> <div>
-            {characters.map((characters) => (
-                <CharactersPrint characters={characters}/>
-            ))}
-            </div>
-        </>
-    );
-    
-}
+  return (
+    <>
+      <div className={styles.data}>
+        {characters.map((characters) => (
+          <CardsPrint characters={characters} />
+        ))}
+      </div>
+    </>
+  );
+};

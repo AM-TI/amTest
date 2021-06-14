@@ -30,25 +30,24 @@ $fontsizetwo: xx-large;
     }
 
     @media (max-width: 508px ) {
-
-            display: flex;
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            height: 102px;
-            flex-direction: row;
-    
+        display: flex;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        margin: 0px;
             button{
-                background: $colorbg;
-                border: solid 2px $colorborder;
-                color: $fontcolor;
-                width: 40%;
-                height: 40px;
-                font-size: $fontsizetwo;
+                background: #6B63B5;
+                border: solid 2px #403B6D;
+                color: white;
+                width: 46%;
+                font-size: unset;
     
                     img{
-                        width: 40px;
-                        height: 40px;
+                        width: 30px;
+                        height: 30px;
                     }
             }
         

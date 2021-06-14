@@ -1,0 +1,17 @@
+.data{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: -17em;
+
+    @media (max-width: 508px ){
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: -2em;
+    }
+}

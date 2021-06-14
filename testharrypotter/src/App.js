@@ -1,5 +1,5 @@
 import React from 'react'
-import './scss/App.scss';
+import styles from './scss/App.module.scss'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { DataCharacters } from './DataCharacters';
 import { Elements } from './Elements';
@@ -14,11 +14,11 @@ function App() {
     <>
       <Router>
         <Switch>
-          <div className="App">
-            <div className="fondo">
+          <div className={styles.App}>
+            <div className={styles.fondo}>
               <Elements />
-              <img src={hpleters} alt="hpLeters" />
-              <h2>Selecciona tu filtro</h2>
+              <img className={styles.hp} src={hpleters} alt="hpLeters" />
+              <h1>Selecciona tu filtro</h1>
               <Btn />
               </div>
             <Route path='/staff'>
