@@ -1,0 +1,56 @@
+$colorborder: #6B63B5;
+$colorbgtwo: rgba(107, 99, 181, 0.6);
+$colorbg: rgba(0, 0, 0, 0.6);
+$fontcolor: white;
+
+.btnS{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    button{
+        height: 80px;
+        width: 20%;
+        background: rgba(0, 0, 0, 0.6);
+        border: solid 4px #6B63B5;
+        color: $fontcolor;
+        font-size: x-large;
+
+            &:hover{
+                background: $colorbgtwo;
+
+                    &:active{
+                        background: $colorborder;
+                    }
+            }
+    }
+
+    @media (max-width: 508px ){
+        
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            
+            button{
+                height: 80px;
+                width: 40%;
+                background: $colorbg;
+                border: solid 4px $colorborder;
+                color: $fontcolor;
+                font-size: larger;
+        
+                    &:hover{
+                        background: $colorbgtwo;
+        
+                            &:active{
+                                background: $colorborder;
+                            }
+                
+            }
+        }
+    }
+
+}
+

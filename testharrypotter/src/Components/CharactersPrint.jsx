@@ -1,5 +1,6 @@
 import React from "react";
 import favorites from '../Assets/favorites.png';
+import './CartsPrint.css';
 
 export const CharactersPrint = (props) => {
   

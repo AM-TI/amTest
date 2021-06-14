@@ -18,7 +18,7 @@ export const Staff = () =>{
     return (
        
         <div>
-            <Btn />
+            
             {staff.map((characters) => (
                 <CharactersPrint characters={characters}/>
             ))}

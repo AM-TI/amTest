@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "hp": "json-server --watch src/hp-characters.json --port 3001"
+    "hp": "json-server --watch src/Data/hp-characters.json --port 3001"
   },
   "eslintConfig": {
     "extends": [

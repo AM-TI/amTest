@@ -1,0 +1,59 @@
+.btnS {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btnS button {
+  height: 80px;
+  width: 20%;
+  background: rgba(0, 0, 0, 0.6);
+  border: solid 4px #6B63B5;
+  color: white;
+  font-size: x-large;
+}
+
+.btnS button:hover {
+  background: rgba(107, 99, 181, 0.6);
+}
+
+.btnS button:hover:active {
+  background: #6B63B5;
+}
+
+@media (max-width: 508px) {
+  .btnS {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .btnS button {
+    height: 80px;
+    width: 40%;
+    background: rgba(0, 0, 0, 0.6);
+    border: solid 4px #6B63B5;
+    color: white;
+    font-size: larger;
+  }
+  .btnS button:hover {
+    background: rgba(107, 99, 181, 0.6);
+  }
+  .btnS button:hover:active {
+    background: #6B63B5;
+  }
+}
+/*# sourceMappingURL=Btn.css.map */
