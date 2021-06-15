@@ -1,0 +1,30 @@
+.modal{
+    background-color: gray;
+    position:fixed;
+    position: relative;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    pointer-events:none;
+    transition: all 1s;
+}
+
+  #modal:target{
+    opacity:1;
+    pointer-events: auto;
+  }
+  .modalTwo{
+    background-color:white;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+    width: 440px;
+    height: 255px;
+    display: flex;
+    flex-flow: column;
+    border: solid yellow;
+    box-shadow: 7px 6px 9px 4px grey;
+  }
+
