@@ -1,0 +1,47 @@
+@use '../../Sass\ Styles/GlobalStyles.scss';
+
+.nav{
+ width: 100vw;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-top: 10vh;
+}
+.nav__img{
+  width: 20%;
+}
+
+.nav__text{
+  color: GlobalStyles.$text-color-W;
+  font-size: GlobalStyles.$Title-size;
+  font-weight: GlobalStyles.$Bold;
+  margin-bottom: 1rem;
+}
+
+.nav-btns{
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-btns__filter{
+  width: GlobalStyles.$btn-widthSize;
+  padding: GlobalStyles.$btn-padding;
+  border: GlobalStyles.$btn-color-outline;
+  color: GlobalStyles.$text-color-W;
+  font-size: GlobalStyles.$Bold-size;
+  font-weight: GlobalStyles.$Bold;
+  letter-spacing: 3px;
+  background-color: GlobalStyles.$btn-color-inactive;
+  margin: 1rem;
+}
+.nav-btns__filter-active{
+  background-color: GlobalStyles.$btn-color-inactive;
+}
+
+.nav-btns__filter-inactive{
+  background-color: GlobalStyles.$btn-color-inactive;
+}
+
+.nav-btns__filter:hover{
+background-color: GlobalStyles.$btn-color-hover ;
+}
