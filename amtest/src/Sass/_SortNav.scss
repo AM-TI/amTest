@@ -1,0 +1,46 @@
+@use "../Sass/GlobalStyles";
+
+.nav {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+
+  &__img {
+    width: 20%;
+  }
+
+  &__text {
+    color: GlobalStyles.$text-color-W;
+    font-size: GlobalStyles.$Title-size;
+    font-weight: GlobalStyles.$Bold;
+    margin-bottom: 1rem;
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: row;
+
+    &__filter--active,
+    &__filter {
+      width: GlobalStyles.$btn-widthSize;
+      padding: GlobalStyles.$btn-padding;
+      border: GlobalStyles.$btn-color-outline;
+      color: GlobalStyles.$text-color-W;
+      font-size: GlobalStyles.$Regular-size;
+      font-weight: GlobalStyles.$Bold;
+      letter-spacing: 3px;
+      margin: 1rem;
+      background-color: GlobalStyles.$btn-color-inactive;
+
+      &--active {
+        background-color: GlobalStyles.$btn-color-active;
+      }
+
+      &:hover {
+        background-color: GlobalStyles.$btn-color-hover;
+      }
+    }
+  }
+}
