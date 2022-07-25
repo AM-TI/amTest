@@ -1,3 +1,4 @@
+@use "./Mixins";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 /* Text */
@@ -17,18 +18,10 @@ $Bold: 600;
 $Regular: 400;
 
 /*Favorites Nav*/
-$fav-nav-widthSize: 20vw;
-$fav-nav-hieghtSize: 4vh;
 $fav-nav-padding: 0.5vh;
 $fav-nav-color: #6b63b5;
 
-/* Buttons */
-/* Buttons Size */
-$btn-widthSize: 20vw;
-$btn-padding: 2vh;
-
 /* Buttons Colors*/
-$btn-color-outline: 4px solid#6B63B5;
 $btn-color-active: #6b63b5;
 $btn-color-inactive: rgba(0, 0, 0, 0.6);
 $btn-color-hover: rgba(107, 99, 181, 0.6);
@@ -66,11 +59,9 @@ span {
 
 /*MainVIEW*/
 .mainView {
+  @include Mixins.flex(column, none, center);
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .mainView__background {

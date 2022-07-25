@@ -1,22 +1,32 @@
 @use "./GlobalStyles";
+@use "./Mixins";
 
 .mainCharacters {
+  @include Mixins.flex(row, left, center);
   width: 80%;
-  height: auto;
-  display: flex;
-  flex-direction: row;
+  height: 80%;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: left;
   margin-top: 5%;
+  overflow-y: scroll;
+}
+
+.mainCharacters::-webkit-scrollbar {
+  width: .1vw;
+}
+
+.mainCharacters::-webkit-scrollbar-track {
+  background-color: #00000000;
+}
+
+.mainCharacters::-webkit-scrollbar-thumb {
+  background-color: #00000000;
+  height: 0%;
 }
 
 .card {
+  @include Mixins.flex(row, left, center);
   width: 48%;
   height: 12rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
 
   &__character-img__image {
     width: 70%;
@@ -27,13 +37,10 @@
   }
 
   &__character-data {
+    @include Mixins.flex(column, space-between, center);
     width: 65%;
     height: 100%;
     border-radius: 0 16px 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .--alive {
@@ -45,12 +52,9 @@
   }
 
   &__character-data__stats {
+    @include Mixins.flex(row, space-between, center);
     width: 80%;
     height: 20%;
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 
     .card__character-data__stats__bookmark {
       width: 2vw;
@@ -66,9 +70,7 @@
   }
 
   &__character-data__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include Mixins.flex(column, space-between, left);
     width: 80%;
     height: 40%;
     font-size: GlobalStyles.$Regular-size;
@@ -98,12 +100,10 @@
 .Ravenclaw,
 .Hufflepuff,
 .noneHouse {
+  @include Mixins.flex(row, center, center);
   width: 40%;
   height: 100%;
   border-radius: 16px 0 0 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .Gryffindor {

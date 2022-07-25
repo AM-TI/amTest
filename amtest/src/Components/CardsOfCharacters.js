@@ -1,5 +1,5 @@
 import "../Sass/_CardsOfCharacters.scss";
-import BookmarkOutline from "../Assets/icons/Rectangle 4.svg";
+import BookmarkOutline from "../Assets/icons/BookMark-G-Outine.svg";
 
 export default function CardsOfCharacters({ charactersData }) {
 

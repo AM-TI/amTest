@@ -1,24 +1,25 @@
 @use "./GlobalStyles";
+@use "./Mixins";
 
 .favoritesNav {
-  width: GlobalStyles.$fav-nav-widthSize;
-  height: GlobalStyles.$fav-nav-hieghtSize;
+  @include Mixins.flex(row, center, center);
+  width: 22vw;
+  height: 4vh;
   background-color: GlobalStyles.$fav-nav-color;
-  display: inline-flex;
   border-radius: 0 0 15px 15px;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 10%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   &__btn {
-    width: 50%;
+    @include Mixins.flex(row, center, center);
+    width: 45%;
+       height: 4vh;
     background-color: GlobalStyles.$fav-nav-color;
-    border-radius: 0 0 15px 15px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     outline: none;
     border-style: none;
+    
 
     &__text {
       color: GlobalStyles.$text-color-W;
@@ -27,8 +28,21 @@
     }
 
     &__icon {
-      width: 1rem;
-      margin-left: 0.5rem;
+      width: 1.2vw;
+      margin-left: 0.2rem;
     }
+  }
+
+  .favoritesNav__btn:nth-child(odd) {
+    border-radius:  0 0 0 15px;
+    border-right: .05rem  solid #403B6D;
+  }
+
+  .favoritesNav__btn:nth-child(even) {
+    border-radius:  0 0 15px 0;
+  }
+
+
+  @media only screen and (min-width: 768px) {
   }
 }

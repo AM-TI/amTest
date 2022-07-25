@@ -4,8 +4,6 @@
 /*General Font Size*/
 /*General Font Weight*/
 /*Favorites Nav*/
-/* Buttons */
-/* Buttons Size */
 /* Buttons Colors*/
 /*Gradient Color by House*/
 /*Generals*/
@@ -33,11 +31,12 @@ span {
 
 /*MainVIEW*/
 .mainView {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: none;
   align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .mainView__background {
@@ -51,22 +50,27 @@ span {
 }
 
 .favoritesNav {
-  width: 20vw;
-  height: 4vh;
-  background-color: #6b63b5;
-  display: inline-flex;
-  border-radius: 0 0 15px 15px;
-  position: absolute;
-  top: 0;
-  right: 10%;
-}
-.favoritesNav__btn {
-  width: 50%;
-  background-color: #6b63b5;
-  border-radius: 0 0 15px 15px;
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 22vw;
+  height: 4vh;
+  background-color: #6b63b5;
+  border-radius: 0 0 15px 15px;
+  position: fixed;
+  top: 0;
+  right: 10%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.favoritesNav__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 4vh;
+  background-color: #6b63b5;
   outline: none;
   border-style: none;
 }
@@ -76,19 +80,27 @@ span {
   padding: 0.5vh;
 }
 .favoritesNav__btn__icon {
-  width: 1rem;
-  margin-left: 0.5rem;
+  width: 1.2vw;
+  margin-left: 0.2rem;
 }
-
+.favoritesNav .favoritesNav__btn:nth-child(odd) {
+  border-radius: 0 0 0 15px;
+  border-right: 0.05rem solid #403B6D;
+}
+.favoritesNav .favoritesNav__btn:nth-child(even) {
+  border-radius: 0 0 15px 0;
+}
 .nav {
-  width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 50vw;
   margin-top: 10vh;
 }
 .nav__img {
-  width: 20%;
+  width: 20vw;
+  margin-bottom: 1rem;
 }
 .nav__text {
   color: white;
@@ -99,9 +111,11 @@ span {
 .nav__btns {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .nav__btns__filter--active, .nav__btns__filter {
-  width: 20vw;
+  width: 23vw;
   padding: 2vh;
   border: 4px solid #6B63B5;
   color: white;
@@ -119,22 +133,37 @@ span {
 }
 
 .mainCharacters {
-  width: 80%;
-  height: auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: left;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  flex-wrap: wrap;
   margin-top: 5%;
+  overflow-y: scroll;
+}
+
+.mainCharacters::-webkit-scrollbar {
+  width: 0.1vw;
+}
+
+.mainCharacters::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mainCharacters::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  height: 0%;
 }
 
 .card {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
   width: 48%;
   height: 12rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
 }
 .card__character-img__image {
   width: 70%;
@@ -144,13 +173,13 @@ span {
   object-position: top;
 }
 .card__character-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 65%;
   height: 100%;
   border-radius: 0 16px 16px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 .card .--alive {
   background-color: white;
@@ -159,12 +188,12 @@ span {
   background-color: #cccccc;
 }
 .card__character-data__stats {
-  width: 80%;
-  height: 20%;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 80%;
+  height: 20%;
 }
 .card__character-data__stats .card__character-data__stats__bookmark {
   width: 2vw;
@@ -180,6 +209,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: left;
   width: 80%;
   height: 40%;
   font-size: 1vw;
@@ -205,12 +235,13 @@ span {
 .Ravenclaw,
 .Hufflepuff,
 .noneHouse {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 40%;
   height: 100%;
   border-radius: 16px 0 0 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .Gryffindor {
