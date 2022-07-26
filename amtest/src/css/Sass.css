@@ -61,6 +61,7 @@ span {
   position: fixed;
   top: 0;
   right: 10%;
+  z-index: 2;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .favoritesNav__btn {
@@ -85,11 +86,61 @@ span {
 }
 .favoritesNav .favoritesNav__btn:nth-child(odd) {
   border-radius: 0 0 0 15px;
-  border-right: 0.05rem solid #403B6D;
+  border-right: 2px solid #403b6d;
 }
 .favoritesNav .favoritesNav__btn:nth-child(even) {
   border-radius: 0 0 15px 0;
 }
+
+.favoritesNav__favorites {
+  display: none;
+  width: 22vw;
+  height: auto;
+  background-color: #6b63b5;
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  padding-top: 4.5vh;
+  z-index: 1;
+}
+.favoritesNav__favorites__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  border-bottom: 2px solid #403b6d;
+}
+.favoritesNav__favorites_list--img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+}
+.favoritesNav__favorites_list--name {
+  font-size: 1vw;
+  font-weight: 600;
+  color: white;
+}
+.favoritesNav__favorites_list--icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.favoritesNav__favorites__list:hover {
+  background-color: #403b6d;
+}
+.favoritesNav__favorites__list:last-child {
+  border-bottom: none;
+  border-radius: 0 0 15px 15px;
+}
+
+.isActive {
+  display: block;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
@@ -195,7 +246,12 @@ span {
   width: 80%;
   height: 20%;
 }
-.card__character-data__stats .card__character-data__stats__bookmark {
+.card__character-data__stats .card__character-data__stats__bookmark--button {
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border-style: none;
+}
+.card__character-data__stats .card__character-data__stats__bookmark--icon {
   width: 2vw;
   height: auto;
 }

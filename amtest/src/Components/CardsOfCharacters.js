@@ -1,7 +1,10 @@
+// import { useState } from "react";
 import "../Sass/_CardsOfCharacters.scss";
 import BookmarkOutline from "../Assets/icons/BookMark-G-Outine.svg";
+// import BookmarkFill from "../Assets/icons/BookMark-G-Fill.svg";
 
-export default function CardsOfCharacters({ charactersData }) {
+export default function CardsOfCharacters({ charactersData, setCharacter, addToFavorites}) {
+
 
   return (
     <section className="mainCharacters">
@@ -23,9 +26,20 @@ export default function CardsOfCharacters({ charactersData }) {
                   <span>{characterData.alive === true ? 'VIVO' : 'FINADO '}</span> / 
                   <span>{characterData.hogwartsStudent === true ? " ESTUDIANTE" : " STAFF"}</span>
                 </div>
-                <img src={BookmarkOutline} className="card__character-data__stats__bookmark" alt="Bookmark"/>
 
-         
+                <button className="card__character-data__stats__bookmark--button"
+                onClick={() => {
+                  setCharacter(`${characterData.name}`)
+                  // dispatch(addToFavorites(`${characterData.name}`))
+                }}>
+
+                 <img  src= {BookmarkOutline} className="card__character-data__stats__bookmark--icon" alt="Bookmark"/>
+
+                {/* { isOpen === false ? 
+                <img  src= {BookmarkOutline} className="card__character-data__stats__bookmark--icon" alt="Bookmark"/>
+                : <img  src= {BookmarkFill} className="card__character-data__stats__bookmark--icon" alt="Bookmark"/>} */}
+                </button>
+
               </section> 
 
               <p className="card__character-data__name">{characterData.name}</p>

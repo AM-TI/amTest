@@ -10,16 +10,17 @@
   position: fixed;
   top: 0;
   right: 10%;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  z-index: 2;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   &__btn {
     @include Mixins.flex(row, center, center);
     width: 45%;
-       height: 4vh;
+    height: 4vh;
     background-color: GlobalStyles.$fav-nav-color;
     outline: none;
     border-style: none;
-    
 
     &__text {
       color: GlobalStyles.$text-color-W;
@@ -34,15 +35,61 @@
   }
 
   .favoritesNav__btn:nth-child(odd) {
-    border-radius:  0 0 0 15px;
-    border-right: .05rem  solid #403B6D;
+    border-radius: 0 0 0 15px;
+    border-right: 2px solid #403b6d;
   }
 
   .favoritesNav__btn:nth-child(even) {
-    border-radius:  0 0 15px 0;
+    border-radius: 0 0 15px 0;
+  }
+}
+
+////// favorites
+.favoritesNav__favorites {
+  display: none;
+  width: 22vw;
+  height: auto;
+  background-color: GlobalStyles.$fav-nav-color;
+  border-radius: 0 0 15px 15px;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  padding-top: 4.5vh;
+  z-index: 1;
+
+  &__list{
+    @include Mixins.flex(row, space-evenly, center);
+    width: 100%;
+    height: 3rem;
+    border-bottom: 2px solid #403b6d;
   }
 
-
-  @media only screen and (min-width: 768px) {
+  &_list--img {
+    width: 2rem;
+    height: 2rem;
+    @include Mixins.img;
   }
+
+  &_list--name {
+    font-size: GlobalStyles.$Regular-size;
+    font-weight: GlobalStyles.$Bold;
+    color: GlobalStyles.$text-color-W;
+  }
+  &_list--icon{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__list:hover{
+    background-color: #403b6d;
+  }
+
+  &__list:last-child {
+    border-bottom: none;
+    border-radius: 0 0 15px 15px;
+  }
+}
+
+.isActive {
+  display: block;
 }

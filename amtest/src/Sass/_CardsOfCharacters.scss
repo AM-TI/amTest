@@ -31,9 +31,7 @@
   &__character-img__image {
     width: 70%;
     height: 60%;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
+    @include Mixins.img;
   }
 
   &__character-data {
@@ -56,7 +54,14 @@
     width: 80%;
     height: 20%;
 
-    .card__character-data__stats__bookmark {
+
+    .card__character-data__stats__bookmark--button{
+      background-color: rgba(255, 255, 255, 0);
+      outline: none;
+      border-style: none;
+    }
+
+    .card__character-data__stats__bookmark--icon {
       width: 2vw;
       height: auto;
     }
