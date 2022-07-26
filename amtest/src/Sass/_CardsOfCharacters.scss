@@ -1,28 +1,6 @@
 @use "./GlobalStyles";
 @use "./Mixins";
 
-.mainCharacters {
-  @include Mixins.flex(row, left, center);
-  width: 80%;
-  height: 80%;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  overflow-y: scroll;
-}
-
-.mainCharacters::-webkit-scrollbar {
-  width: .1vw;
-}
-
-.mainCharacters::-webkit-scrollbar-track {
-  background-color: #00000000;
-}
-
-.mainCharacters::-webkit-scrollbar-thumb {
-  background-color: #00000000;
-  height: 0%;
-}
-
 .card {
   @include Mixins.flex(row, left, center);
   width: 48%;
@@ -54,8 +32,7 @@
     width: 80%;
     height: 20%;
 
-
-    .card__character-data__stats__bookmark--button{
+    .card__character-data__stats__bookmark--button {
       background-color: rgba(255, 255, 255, 0);
       outline: none;
       border-style: none;

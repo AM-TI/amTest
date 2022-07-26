@@ -49,6 +49,31 @@ span {
   z-index: -1;
 }
 
+.mainCharacters {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  overflow-y: scroll;
+}
+
+.mainCharacters::-webkit-scrollbar {
+  width: 0.1vw;
+}
+
+.mainCharacters::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.mainCharacters::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0);
+  height: 0%;
+}
+
 .favoritesNav {
   display: flex;
   flex-direction: row;
@@ -181,31 +206,6 @@ span {
 }
 .nav__btns__filter--active:hover, .nav__btns__filter:hover {
   background-color: rgba(107, 99, 181, 0.6);
-}
-
-.mainCharacters {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  width: 80%;
-  height: 80%;
-  flex-wrap: wrap;
-  margin-top: 5%;
-  overflow-y: scroll;
-}
-
-.mainCharacters::-webkit-scrollbar {
-  width: 0.1vw;
-}
-
-.mainCharacters::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.mainCharacters::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0);
-  height: 0%;
 }
 
 .card {
