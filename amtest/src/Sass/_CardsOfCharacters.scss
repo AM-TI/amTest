@@ -1,0 +1,251 @@
+@use "./GlobalStyles";
+@use "./Mixins";
+@use "./MediaQuerys";
+
+.card {
+  @include Mixins.flex(row, left, center);
+  width: 48%;
+  height: 15rem;
+
+  &__character {
+    @include Mixins.flex(row, center, center);
+    width: 100%;
+    height: 100%;
+    border-radius: 16px 0 0 16px;
+  }
+
+  &__character-img__image {
+    width: 250px;
+    height: 250px;
+    @include Mixins.img;
+  }
+
+  &__character-data {
+    @include Mixins.flex(column, space-between, center);
+    width: 65%;
+    height: 100%;
+    border-radius: 0 16px 16px 0;
+  }
+
+  .--alive {
+    background-color: #ffff;
+  }
+
+  .--finado {
+    background-color: #cccccc;
+  }
+
+  &__character-data__stats {
+    @include Mixins.flex(row, space-between, center);
+    width: 80%;
+    height: 20%;
+
+    .card__character-data__stats__bookmark--button {
+      background-color: rgba(255, 255, 255, 0);
+      outline: none;
+      border-style: none;
+    }
+
+    .card__character-data__stats__bookmark--icon {
+      width: 1vw;
+      height: auto;
+    }
+  }
+
+  &__character-data__name {
+    width: 80%;
+    color: GlobalStyles.$text-color-G;
+    font-size:1vw;
+    font-weight: GlobalStyles.$Bold;
+  }
+
+  &__character-data__info {
+    @include Mixins.flex(column, space-between, left);
+    width: 80%;
+    height: 40%;
+    font-size: GlobalStyles.$Regular-size;
+    margin-bottom: 1.5rem;
+
+    &__rule--bold {
+      font-weight: GlobalStyles.$Bold;
+    }
+
+    &__rule--regular {
+      font-weight: GlobalStyles.$Regular;
+    }
+  }
+
+  @include MediaQuerys.phone {
+    @include Mixins.flex(column, left, center);
+    width: 48%;
+    height: 15rem;
+
+    &__character {
+      width: 100%;
+      height: 50%;
+      border-radius: 16px 0 0 16px;
+    }
+
+    &__character-img__image {
+      width: 90px;
+      height: 90px;
+      @include Mixins.img;
+    }
+
+    &__character-data {
+      @include Mixins.flex(column-reverse, space-evenly, center);
+      width: 100%;
+      height: 50%;
+      border-radius: 0 0 16px 16px;
+    }
+
+    &__character-data__stats {
+      @include Mixins.flex(row, space-between, center);
+      width: 80%;
+      height: 20%;
+
+      &__stat {
+        @include Mixins.flex(column, space-evenly, left);
+      }
+
+      .card__character-data__stats__bookmark--icon {
+        width: 3vw;
+      }
+    }
+
+    &__character-data__name {
+      width: 80%;
+      font-size: 3.2vw;
+      text-align: center;
+    }
+
+    &__character-data__info {
+      display: none;
+    }
+
+    .Gryffindor,
+    .Slytherin,
+    .Ravenclaw,
+    .Hufflepuff,
+    .noneHouse {
+      border-radius: 16px 16px 0 0;
+    }
+
+    &:nth-child(odd) {
+      margin: 0 0 0;
+    }
+
+    &:nth-child(even) {
+      margin: 0 0 0 0;
+    }
+  }
+
+  @include MediaQuerys.desktop {
+    @include Mixins.flex(row, left, center);
+    width: 48%;
+    height: 15rem;
+
+    &__character {
+      width: 40%;
+      height: 100%;
+      border-radius: 16px 0 0 16px;
+    }
+
+    &__character-img__image {
+      width: 150px;
+      height: 150px;
+      @include Mixins.img;
+    }
+
+    &__character-data {
+      @include Mixins.flex(column, space-between, center);
+      width: 65%;
+      height: 100%;
+      border-radius: 0 16px 16px 0;
+    }
+
+
+    &__character-data__stats {
+      @include Mixins.flex(row, space-between, center);
+      width: 80%;
+      height: 20%;
+
+      &__stat {
+        @include Mixins.flex(row, space-evenly, left);
+      }
+
+      .card__character-data__stats__bookmark--button {
+        background-color: rgba(255, 255, 255, 0);
+        outline: none;
+        border-style: none;
+      }
+
+      .card__character-data__stats__bookmark--icon {
+        width: 1.5vw;
+        height: auto;
+      }
+    }
+
+    &__character-data__name {
+      width: 80%;
+      color: GlobalStyles.$text-color-G;
+      font-size: GlobalStyles.$CharacerName-size;
+      font-weight: GlobalStyles.$Bold;
+    }
+
+    &__character-data__info {
+      @include Mixins.flex(column, space-between, left);
+      width: 80%;
+      height: 40%;
+      font-size: GlobalStyles.$Regular-size;
+      margin-bottom: 1.5rem;
+    }
+
+    .Gryffindor,
+    .Slytherin,
+    .Ravenclaw,
+    .Hufflepuff,
+    .noneHouse {
+      border-radius: 16px 0 0 16px;
+    }
+  }
+}
+
+.Gryffindor,
+.Slytherin,
+.Ravenclaw,
+.Hufflepuff,
+.noneHouse {
+  @include Mixins.flex(row, center, center);
+  width: 100%;
+  height: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+//  / colores / modifiaciones especifiacas
+.card:nth-child(odd) {
+  margin: 0 4% 4% 0;
+}
+
+.card:nth-child(even) {
+  margin: 0 0 4% 0;
+}
+
+.Gryffindor {
+  background: linear-gradient(GlobalStyles.$Gryffindor);
+}
+
+.Slytherin {
+  background: linear-gradient(GlobalStyles.$Slytherin);
+}
+
+.Ravenclaw {
+  background: linear-gradient(GlobalStyles.$Ravenclaw);
+}
+
+.Hufflepuff {
+  background: linear-gradient(GlobalStyles.$Hufflepuff);
+}
+.noneHouse {
+  background: linear-gradient(GlobalStyles.$noneHouse);
+}

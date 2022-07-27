@@ -1,0 +1,111 @@
+@use "./Mixins";
+@use "./MediaQuerys";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+/* Text */
+/*General Font Colors*/
+$text-color-W: #ffff;
+$text-color-G: #081f32;
+$text-color-Gb: #374a59;
+$text-color-Gw: #999999;
+
+/*General Font Size*/
+$Title-size: 3vw;
+$Regular-size: 1vw;
+$CharacerName-size: 1.9vw;
+
+/*General Font Weight*/
+$Bold: 600;
+$Regular: 400;
+
+/*Favorites Nav*/
+$fav-nav-padding: 0.5vh;
+$fav-nav-color: #6b63b5;
+
+/* Buttons Colors*/
+$btn-color-active: #6b63b5;
+$btn-color-inactive: rgba(0, 0, 0, 0.6);
+$btn-color-hover: rgba(107, 99, 181, 0.6);
+
+/*Gradient Color by House*/
+$Gryffindor: 135deg, #ff0000 0%, #fed482 100%;
+$Slytherin: 135deg, #1c792b 0%, #82e95e 100%;
+$Hufflepuff: 135deg, #ffc700 0%, #fff388 100%;
+$Ravenclaw: 135deg, #0597b7 0%, #66d1ff 100%;
+$noneHouse: 135deg, #7c7c7c 0%, #a8a8a8 100%;
+
+/*Generals*/
+
+html {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  font-family: "Open Sans";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+span {
+  margin: 0;
+}
+
+/*MainVIEW*/
+.mainView {
+  @include Mixins.flex(column, none, center);
+  width: 100vw;
+  height: 100vh;
+}
+
+.mainView__background {
+  width: 100vw;
+  height:fit-content;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.mainCharacters {
+  @include Mixins.flex(row, left, center);
+  width: 80%;
+  height: 65%;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  overflow-y: scroll;
+
+  @include MediaQuerys.phone {
+    width: 90%;
+    height: 70%;
+  }
+
+}
+
+.mainCharacters::-webkit-scrollbar {
+  width: 0.1vw;
+}
+
+.mainCharacters::-webkit-scrollbar-track {
+  background-color: #00000000;
+}
+
+.mainCharacters::-webkit-scrollbar-thumb {
+  background-color: #00000000;
+  height: 0%;
+}
