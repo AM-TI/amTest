@@ -40,13 +40,15 @@ export default function CardsOCardsOfCharactersfs({ character,addToFavorites, de
 
   return (
     <div key={name} className="card">
-      <section className={house ? house : "noneHouse"}>
-        <img
+      <section className="card__character">
+        <div className={house ? house : "noneHouse"}>
+        <img 
           src={image}
           className="card__character-img__image"
           alt="Howarts Character
                "
         />
+        </div>
       </section>
 
       <section
@@ -58,7 +60,7 @@ export default function CardsOCardsOfCharactersfs({ character,addToFavorites, de
       >
         <section className="card__character-data__stats">
           <div className="card__character-data__stats__stat">
-            <span>{alive === true ? "VIVO" : "FINADO "}</span> /
+            <span>{alive === true ? "VIVO  /" : "FINADO / "}</span> 
             <span>{hogwartsStudent === true ? " ESTUDIANTE" : " STAFF"}</span>
           </div>
 

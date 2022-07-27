@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Sass/NewRegister.scss";
+import "../Sass/_NewRegister.scss";
 import close from "../Assets/icons/Close.svg";
 
 export default function NewRegister({ setIsOpenForm }) {
@@ -60,8 +60,7 @@ export default function NewRegister({ setIsOpenForm }) {
           className="FormRegister__Header__close"
           onClick={() => setIsOpenForm(false)}
         >
-          |{" "}
-          <img className="FormRegister_Header__icon" src={close} alt="close" />
+          <img className="FormRegister__Header__close__icon" src={close} alt="close" />
         </button>
       </section>
 

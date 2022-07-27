@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { favoritesState } from "../Redux/Reducers";
 import { addToFavorites, deleteToFavorites } from "../Redux/Actions";
 import { helperHttp } from "../API/helperHttp";
-import FavoritesNav from "../Components/FavoritesNav";
+// import FavoritesNav from "../Components/FavoritesNav";
+import FavsNavNueva from "../Components/FavsNavNueva";
 import SortNav from "../Components/SortNav";
 import CardsOfCharacters from "../Components/CardsOfCharacters";
 import "../Sass/_GlobalStyles.scss";
@@ -52,11 +53,7 @@ function App() {
       <img src={BGHowarts} className="mainView__background" alt="Howarts" />
       <div className="mainView__background"></div>
 
-      <FavoritesNav
-        favorites={favorites}
-        // deleteToFavorites={() => dispatch(deleteToFavorites(currentDelete))}
-        setIsBtnActive={setIsBtnActive}
-      />
+      <FavsNavNueva favorites={favorites}  />
 
       <SortNav rol={rol} setRol={setRol} />
 

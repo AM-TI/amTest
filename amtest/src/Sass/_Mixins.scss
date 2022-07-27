@@ -17,6 +17,17 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+@mixin buttonQueryphone {
+  width: 44vw;
+  border: 4px solid#6B63B5;
+  color:  #ffff;
+  font-size: 2vw;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin: .5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 @mixin img {
   border-radius: 50%;
   object-fit: cover;
