@@ -15,5 +15,10 @@
   letter-spacing: 3px;
   margin: 1rem;
   background-color: rgba(0, 0, 0, 0.6);
+}
 
+@mixin img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }

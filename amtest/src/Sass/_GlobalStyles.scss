@@ -73,3 +73,25 @@ span {
   top: 0;
   z-index: -1;
 }
+
+.mainCharacters {
+  @include Mixins.flex(row, left, center);
+  width: 80%;
+  height: 80%;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  overflow-y: scroll;
+}
+
+.mainCharacters::-webkit-scrollbar {
+  width: 0.1vw;
+}
+
+.mainCharacters::-webkit-scrollbar-track {
+  background-color: #00000000;
+}
+
+.mainCharacters::-webkit-scrollbar-thumb {
+  background-color: #00000000;
+  height: 0%;
+}
