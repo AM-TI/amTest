@@ -1,0 +1,37 @@
+@use "../Sass/GlobalStyles";
+@use "./Mixins";
+
+.nav {
+  @include Mixins.flex(column, center, center);
+  width: 50vw;
+  margin-top: 10vh;
+
+  &__img {
+    width: 20vw;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    color: GlobalStyles.$text-color-W;
+    font-size: GlobalStyles.$Title-size;
+    font-weight: GlobalStyles.$Bold;
+    margin-bottom: 1rem;
+  }
+
+  &__btns {
+    @include Mixins.flex(row, center, center);
+
+    &__filter--active,
+    &__filter {
+      @include Mixins.button;
+
+      &--active {
+        background-color: GlobalStyles.$btn-color-active;
+      }
+
+      &:hover {
+        background-color: GlobalStyles.$btn-color-hover;
+      }
+    }
+  }
+}

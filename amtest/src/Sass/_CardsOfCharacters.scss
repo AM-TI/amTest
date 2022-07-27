@@ -1,0 +1,126 @@
+@use "./GlobalStyles";
+@use "./Mixins";
+
+.mainCharacters {
+  @include Mixins.flex(row, left, center);
+  width: 80%;
+  height: 80%;
+  flex-wrap: wrap;
+  margin-top: 5%;
+  overflow-y: scroll;
+}
+
+.mainCharacters::-webkit-scrollbar {
+  width: .1vw;
+}
+
+.mainCharacters::-webkit-scrollbar-track {
+  background-color: #00000000;
+}
+
+.mainCharacters::-webkit-scrollbar-thumb {
+  background-color: #00000000;
+  height: 0%;
+}
+
+.card {
+  @include Mixins.flex(row, left, center);
+  width: 48%;
+  height: 12rem;
+
+  &__character-img__image {
+    width: 70%;
+    height: 60%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__character-data {
+    @include Mixins.flex(column, space-between, center);
+    width: 65%;
+    height: 100%;
+    border-radius: 0 16px 16px 0;
+  }
+
+  .--alive {
+    background-color: #ffff;
+  }
+
+  .--finado {
+    background-color: #cccccc;
+  }
+
+  &__character-data__stats {
+    @include Mixins.flex(row, space-between, center);
+    width: 80%;
+    height: 20%;
+
+    .card__character-data__stats__bookmark {
+      width: 2vw;
+      height: auto;
+    }
+  }
+
+  &__character-data__name {
+    width: 80%;
+    color: GlobalStyles.$text-color-G;
+    font-size: GlobalStyles.$CharacerName-size;
+    font-weight: GlobalStyles.$Bold;
+  }
+
+  &__character-data__info {
+    @include Mixins.flex(column, space-between, left);
+    width: 80%;
+    height: 40%;
+    font-size: GlobalStyles.$Regular-size;
+    margin-bottom: 1.5rem;
+
+    &__rule--bold {
+      font-weight: GlobalStyles.$Bold;
+    }
+
+    &__rule--regular {
+      font-weight: GlobalStyles.$Regular;
+    }
+  }
+}
+
+//  / colores / modifiaciones especifiacas
+.card:nth-child(odd) {
+  margin: 0 4% 4% 0;
+}
+
+.card:nth-child(even) {
+  margin: 0 0 4% 0;
+}
+
+.Gryffindor,
+.Slytherin,
+.Ravenclaw,
+.Hufflepuff,
+.noneHouse {
+  @include Mixins.flex(row, center, center);
+  width: 40%;
+  height: 100%;
+  border-radius: 16px 0 0 16px;
+}
+
+.Gryffindor {
+  background: linear-gradient(GlobalStyles.$Gryffindor);
+}
+
+.Slytherin {
+  background: linear-gradient(GlobalStyles.$Slytherin);
+}
+
+.Ravenclaw {
+  background: linear-gradient(GlobalStyles.$Ravenclaw);
+}
+
+.Hufflepuff {
+  background: linear-gradient(GlobalStyles.$Hufflepuff);
+}
+.noneHouse {
+  background: linear-gradient(GlobalStyles.$noneHouse);
+}
