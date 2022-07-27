@@ -10,21 +10,24 @@ export function favoritesState(getDatabase) {
   initCharacterState.characters = getDatabase;
 }
 
-export function favoriteReducer(state = [], action) {
-  let currentCharacter = [];
-  if (state.length > 0) {
-    currentCharacter = state.characters.find(
-      (character) => character.name === action.payload
-    );
-  }
+export function favoriteReducer(state = initCharacterState, action) {
   switch (action.type) {
-    case ADD_TO_FAVORITES: {
-      let fav = [...state.favorites, currentCharacter];
-      return {
-        ...state,
-        favorites: fav,
-      };
-    }
+    case ADD_TO_FAVORITES:
+      {
+        let currentCharacter = state.characters.find(
+          (character) => character.name === action.payload
+        );
+
+        if (state.favorites.length >= 0 && state.favorites.length < 5) {
+          return {
+            ...state,
+            favorites: [...state.favorites, currentCharacter],
+          };
+        }else{
+          return state;
+        }
+      }
+
     case REMOVE_TO_FAVORITES: {
       return {
         ...state,

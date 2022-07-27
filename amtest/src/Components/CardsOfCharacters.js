@@ -3,7 +3,7 @@ import "../Sass/_CardsOfCharacters.scss";
 import BookmarkOutline from "../Assets/icons/BookMark-G-Outine.svg";
 import BookmarkFill from "../Assets/icons/BookMark-G-Fill.svg";
 
-export default function CardsOfs({ character,addToFavorites, deleteToFavorites, isBtnActive,}) {
+export default function CardsOCardsOfCharactersfs({ character,addToFavorites, deleteToFavorites, isBtnActive,}) {
 
   ///bookmarks agregar o eliminar favorito
   const [isActive, setIsActive] = useState(false);

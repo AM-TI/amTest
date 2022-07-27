@@ -52,7 +52,7 @@ export default function FavoritesNav({
           <FavoriteList 
           key={index}
           favorite={favorite}
-          deleteToFavorites ={deleteToFavorites}
+          deleteToFavorites={deleteToFavorites}
           setIsBtnActive={setIsBtnActive}  />
           </div>
           ))

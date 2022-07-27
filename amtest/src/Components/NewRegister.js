@@ -16,6 +16,23 @@ export default function NewRegister({ UpdateCharacters, setIsOpenForm }) {
 
   const [formToRegister, setFormToRegister] = useState(initialFormToRegister);
 
+  const PostUpdate = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(
+      formToRegister,
+      // console.log(formToRegister + "PostUpdate")
+    )
+  }
+
+  const PostUpdateJson = () => {
+    fetch("http://localhost:4000/characters", PostUpdate)
+      .then((response) => response.json())
+      .then((data) => console.log(data + "db actualizada"))
+  }
+
   const handleUpdateForm = (e) => {
     ////Camb ios en los inputs
     setFormToRegister({ ...formToRegister, [e.target.name]: e.target.value });
@@ -33,11 +50,12 @@ export default function NewRegister({ UpdateCharacters, setIsOpenForm }) {
         hogwartsStaff: e.target.checked,
       });
     }
-    console.log(formToRegister);
+    // console.log(formToRegister);
   };
   //envia la data a el post
   const handleSubmit = (e) => {
-    UpdateCharacters(formToRegister);
+    e.preventDefault()
+    PostUpdateJson()
     FormReset();
   };
 
@@ -121,7 +139,7 @@ export default function NewRegister({ UpdateCharacters, setIsOpenForm }) {
           <input type="file" name="file" id="file" />
         </div>
     
-        <button className= "FormRegister__Form__button" onClick={() => handleSubmit()}>
+        <button className= "FormRegister__Form__button" onClick={(e) => handleSubmit()}>
           GUARDAR
         </button>
 
