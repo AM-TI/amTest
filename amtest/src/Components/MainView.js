@@ -21,7 +21,6 @@ function App() {
   /////btns Actions
   const [isBtnActive, setIsBtnActive] = useState();
 
-
   // let api = helperHttp(); 
   let charactersUrl = "http://localhost:4000/characters";
  //UseEffect para hacer el get de la API

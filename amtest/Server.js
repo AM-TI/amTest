@@ -16,5 +16,5 @@ app.get('/', cors(corsOptions), function (req, res) {
 })
 
 app.listen(4000, () => {
-  console.log('todobien:)')
+  console.log('server')
 })
