@@ -3,13 +3,11 @@ import "../Sass/_CardsOfCharacters.scss";
 import BookmarkOutline from "../Assets/icons/BookMark-G-Outine.svg";
 import BookmarkFill from "../Assets/icons/BookMark-G-Fill.svg";
 
-export default function CardsOfs({
-  character,
-  addToFavorites,
-  deleteToFavorites,
-  isBtnActive,
-}) {
+export default function CardsOCardsOfCharactersfs({ character,addToFavorites, deleteToFavorites, isBtnActive,}) {
+
+  ///bookmarks agregar o eliminar favorito
   const [isActive, setIsActive] = useState(false);
+
   const {
     name,
     house,
@@ -42,13 +40,15 @@ export default function CardsOfs({
 
   return (
     <div key={name} className="card">
-      <section className={house ? house : "noneHouse"}>
-        <img
+      <section className="card__character">
+        <div className={house ? house : "noneHouse"}>
+        <img 
           src={image}
           className="card__character-img__image"
           alt="Howarts Character
                "
         />
+        </div>
       </section>
 
       <section
@@ -60,7 +60,7 @@ export default function CardsOfs({
       >
         <section className="card__character-data__stats">
           <div className="card__character-data__stats__stat">
-            <span>{alive === true ? "VIVO" : "FINADO "}</span> /
+            <span>{alive === true ? "VIVO  /" : "FINADO / "}</span> 
             <span>{hogwartsStudent === true ? " ESTUDIANTE" : " STAFF"}</span>
           </div>
 

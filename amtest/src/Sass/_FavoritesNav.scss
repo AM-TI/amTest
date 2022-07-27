@@ -1,5 +1,6 @@
 @use "./GlobalStyles";
 @use "./Mixins";
+@use "./MediaQuerys";
 
 .favoritesNav {
   @include Mixins.flex(row, center, center);
@@ -10,7 +11,7 @@
   position: fixed;
   top: 0;
   right: 10%;
-  z-index: 2;
+  z-index: 10;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
@@ -42,9 +43,84 @@
   .favoritesNav__btn:nth-child(even) {
     border-radius: 0 0 15px 0;
   }
+
+  @include MediaQuerys.phone {
+    background-color: rgb(7, 119, 163);
+    height: 4vh;
+    width: 90vw;
+    top: 96vh;
+    right: 5%;
+    border-radius: 15px 15px 0 0;
+
+    &__btn {
+      width: 90%;
+      height: 4vh;
+
+      &__text {
+        font-size: 3vw;
+        padding: GlobalStyles.$fav-nav-padding;
+      }
+
+      &__icon {
+        width: 3vw;
+        margin-left: 0.2rem;
+      }
+    }
+
+    .favoritesNav__btn:nth-child(odd) {
+      border-radius: 15px 0 0 0;
+    }
+    .favoritesNav__btn:nth-child(even) {
+      border-radius: 0 15px 0 0;
+    }
+  }
+
+  @include MediaQuerys.desktop {
+    @include Mixins.flex(row, center, center);
+    width: 22vw;
+    height: 4vh;
+    background-color: GlobalStyles.$fav-nav-color;
+    border-radius: 0 0 15px 15px;
+    position: fixed;
+    top: 0;
+    right: 10%;
+    z-index: 6;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    &__btn {
+      @include Mixins.flex(row, center, center);
+      width: 45%;
+      height: 4vh;
+      background-color: GlobalStyles.$fav-nav-color;
+      outline: none;
+      border-style: none;
+
+      &__text {
+        color: GlobalStyles.$text-color-W;
+        font-size: GlobalStyles.$Regular-size;
+        padding: GlobalStyles.$fav-nav-padding;
+      }
+
+      &__icon {
+        width: 1.2vw;
+        margin-left: 0.2rem;
+      }
+    }
+
+    .favoritesNav__btn:nth-child(odd) {
+      border-radius: 0 0 0 15px;
+      border-right: 2px solid #403b6d;
+    }
+
+    .favoritesNav__btn:nth-child(even) {
+      border-radius: 0 0 15px 0;
+    }
+  }
 }
 
-////// favorites
+//// favorites list
+
 .favoritesNav__favorites {
   display: none;
   width: 22vw;
@@ -53,40 +129,132 @@
   border-radius: 0 0 15px 15px;
   position: absolute;
   top: 0;
+  padding-top: 4;
   right: 10%;
-  padding-top: 4.5vh;
-  z-index: 1;
+  z-index: 5;
 
-  &__list{
-    @include Mixins.flex(row, space-evenly, center);
+  &__list {
+    @include Mixins.flex(row, center, center);
     width: 100%;
-    height: 3rem;
+    height: 4rem;
     border-bottom: 2px solid #403b6d;
   }
 
   &_list--img {
-    width: 2rem;
-    height: 2rem;
+    width: 30px;
+    height: 30px;
+    margin: 0 1rem;
     @include Mixins.img;
+    background-color: aliceblue;
   }
 
   &_list--name {
+    width: 55%;
     font-size: GlobalStyles.$Regular-size;
     font-weight: GlobalStyles.$Bold;
     color: GlobalStyles.$text-color-W;
+    margin: 0.5rem;
   }
-  &_list--icon{
+  &_list--icon {
     width: 1.5rem;
     height: 1.5rem;
+    margin: 0 1rem;
   }
 
-  &__list:hover{
+  &__list:hover {
     background-color: #403b6d;
   }
 
-  &__list:last-child {
-    border-bottom: none;
+  // &__list:last-child {
+  //   border-bottom: none;
+  //   border-radius: 0 0 15px 15px;
+  // }
+
+  @include MediaQuerys.phone {
+    display: none;
+    height: fix-content;
+    width: 90vw;
+    top: 70vh;
+    right: 5%;
+    padding-bottom: 0;
+    border-radius: 15px 15px 0 0;
+    // @include Mixins.flex(column-reverse, flex-end, flex-start);
+    // flex-wrap: wrap-reverse;
+
+    &__list:last-child{
+      padding-bottom: 4.5vh;
+    }
+
+    &__list {
+      width: 100%;
+      height: 4rem;
+      border-bottom: 2px solid #403b6d;
+    }
+    &_list--img {
+      width: 3rem;
+      height: 3rem;
+      margin: 0 2rem;
+      @include Mixins.img;
+    }
+
+    &_list--name {
+      width: 70%;
+      font-size: 2vh;
+    }
+    &_list--icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0 2rem;
+    }
+  }
+
+  @include MediaQuerys.desktop {
+    display: none;
+    width: 22vw;
+    height: auto;
+    background-color: GlobalStyles.$fav-nav-color;
     border-radius: 0 0 15px 15px;
+    position: absolute;
+    top: 0;
+    padding-top: 4vh;
+    right: 10%;
+    z-index: 5;
+
+    &__list {
+      @include Mixins.flex(row, center, center);
+      width: 100%;
+      height: 3rem;
+      border-bottom: 2px solid #403b6d;
+    }
+
+    &_list--img {
+      width: 30px;
+      height: 30px;
+      margin: 0 1rem;
+      @include Mixins.img;
+    }
+
+    &_list--name {
+      width: 55%;
+      font-size: GlobalStyles.$Regular-size;
+      font-weight: GlobalStyles.$Bold;
+      color: GlobalStyles.$text-color-W;
+      margin: 0.5rem;
+    }
+    &_list--icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 1rem;
+    }
+
+    &__list:hover {
+      background-color: #403b6d;
+    }
+
+    &__list:last-child {
+      border-bottom: none;
+      border-radius: 0 0 15px 15px;
+    }
   }
 }
 

@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { favoritesState } from "../Redux/Reducers";
 import { addToFavorites, deleteToFavorites } from "../Redux/Actions";
 import { helperHttp } from "../API/helperHttp";
-import FavoritesNav from "../Components/FavoritesNav";
+// import FavoritesNav from "../Components/FavoritesNav";
+import FavsNavNueva from "../Components/FavsNavNueva";
 import SortNav from "../Components/SortNav";
 import CardsOfCharacters from "../Components/CardsOfCharacters";
 import "../Sass/_GlobalStyles.scss";
@@ -14,14 +15,16 @@ function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { favorites } = state.favorites;
+
   /// duplicado de la data para primer renderizado
   const [charactersData, setCharactersData] = useState([]);
   const [rol, setRol] = useState("");
   /////btns Actions
   const [isBtnActive, setIsBtnActive] = useState();
 
-  // let api = helperHttp();  //UseEffect para hacer el get de la API
+  // let api = helperHttp(); 
   let charactersUrl = "http://localhost:4000/characters";
+ //UseEffect para hacer el get de la API
   useEffect(() => {
     helperHttp()
       .get(charactersUrl)
@@ -41,24 +44,23 @@ function App() {
           setCharactersData(null);
         }
       });
+
   }, [charactersUrl, rol]);
+
 
   return (
     <main className="mainView">
       <img src={BGHowarts} className="mainView__background" alt="Howarts" />
       <div className="mainView__background"></div>
-      <FavoritesNav
-        favorites={favorites}
-        deleteToFavorites={() => dispatch(deleteToFavorites())}
-        setIsBtnActive={setIsBtnActive}
-      />
+
+      <FavsNavNueva favorites={favorites}  />
 
       <SortNav rol={rol} setRol={setRol} />
 
       <section className="mainCharacters">
-        {charactersData.map((character, index) => (
+        {charactersData.map((character) => (
           <CardsOfCharacters
-            key={index}
+          key={character.name}
             character={character}
             setIsBtnActive={setIsBtnActive}
             isBtnActive={isBtnActive}
