@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.a9aea223.css",
+    "main.css": "/static/css/main.d10b9eb5.css",
     "main.js": "/static/js/main.6acfbbf8.js",
     "static/js/787.0a609a01.chunk.js": "/static/js/787.0a609a01.chunk.js",
     "static/media/Background-Howarts.jpg": "/static/media/Background-Howarts.98d61ecfdf666d45c220.jpg",
@@ -12,12 +12,12 @@
     "static/media/BookMark-G-Fill.svg": "/static/media/BookMark-G-Fill.0d79d13f3e871ea9e6f95b437234d05e.svg",
     "index.html": "/index.html",
     "static/media/Close.svg": "/static/media/Close.2470e84f38327756834dc195e84d7abe.svg",
-    "main.a9aea223.css.map": "/static/css/main.a9aea223.css.map",
+    "main.d10b9eb5.css.map": "/static/css/main.d10b9eb5.css.map",
     "main.6acfbbf8.js.map": "/static/js/main.6acfbbf8.js.map",
     "787.0a609a01.chunk.js.map": "/static/js/787.0a609a01.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9aea223.css",
+    "static/css/main.d10b9eb5.css",
     "static/js/main.6acfbbf8.js"
   ]
 }
