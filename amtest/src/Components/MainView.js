@@ -1,7 +1,7 @@
-import { useEffect, useReducer, useState } from "react";
-// import { useSelector, useDispatch } from 'react-redux';
-import { simulacionCharacters } from "../Redux/Reducers";
-import { favoritesState, favoriteReducer } from "../Redux/Reducers";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { favoritesState } from "../Redux/Reducers";
+import { addToFavorites, deleteToFavorites } from "../Redux/Actions";
 import { helperHttp } from "../API/helperHttp";
 import FavoritesNav from "../Components/FavoritesNav";
 import SortNav from "../Components/SortNav";
@@ -10,30 +10,25 @@ import "../Sass/_GlobalStyles.scss";
 import BGHowarts from "../Assets/img/Background-Howarts.jpg";
 
 function App() {
+  /// actions redux
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  const { favorites } = state.favorites;
+  /// duplicado de la data para primer renderizado
   const [charactersData, setCharactersData] = useState([]);
   const [rol, setRol] = useState("");
+  /////btns Actions
+  const [isBtnActive, setIsBtnActive] = useState();
 
-  // const [character, setCharacter] = useState({});
-
-  const [state, dispatch] = useReducer(favoriteReducer, simulacionCharacters);
-  const { CharacterFakeData, characterlist } = state;
-
-  const addToFavs = () => {};
-
-  // const dispatch = useDispatch();
-  // const state = useSelector((state) => state);
-  // const { characters, favorites } = state.favorites;
-
-  // let api = helperHttp();
+  // let api = helperHttp();  //UseEffect para hacer el get de la API
   let charactersUrl = "http://localhost:4000/characters";
-  //UseEffect para hacer el get de la API
   useEffect(() => {
     helperHttp()
       .get(charactersUrl)
       .then((res) => {
         if (!res.err && rol === "") {
           setCharactersData(res);
-          // favoritesState(res);
+          favoritesState(res);
         } else if (!res.err && rol === "hogwartsStudent") {
           setCharactersData(
             res.filter((character) => character.hogwartsStudent === true)
@@ -52,16 +47,25 @@ function App() {
     <main className="mainView">
       <img src={BGHowarts} className="mainView__background" alt="Howarts" />
       <div className="mainView__background"></div>
-      <FavoritesNav />
+      <FavoritesNav
+        favorites={favorites}
+        deleteToFavorites={() => dispatch(deleteToFavorites())}
+        setIsBtnActive={setIsBtnActive}
+      />
+
       <SortNav rol={rol} setRol={setRol} />
+
       <section className="mainCharacters">
-        {charactersData.map((character) => (
+        {charactersData.map((character, index) => (
           <CardsOfCharacters
-            key={character.name}
+            key={index}
             character={character}
-            addToFavs={addToFavs}
-            // setCharacter={setCharacter}
-            // addToFavorites={() => dispatch(addToFavorites(character))}
+            setIsBtnActive={setIsBtnActive}
+            isBtnActive={isBtnActive}
+            addToFavorites={() => dispatch(addToFavorites(character.name))}
+            deleteToFavorites={() =>
+              dispatch(deleteToFavorites(character.name))
+            }
           />
         ))}
       </section>

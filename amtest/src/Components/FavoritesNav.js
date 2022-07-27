@@ -1,18 +1,18 @@
 import { useState } from "react";
-// import { useDispatch } from "react-redux";
-import { simulacionCharacters } from "../Redux/Reducers";
 import "../Sass/_FavoritesNav.scss";
 import bookmarkW from "../Assets/icons/BookMark-W-Fill.svg";
 import userAdd from "../Assets/icons/User-fill-add.svg";
 import trash from "../Assets/icons/Trash.svg";
-// import Luna from "../Assets/icons/luna.png";
 
-export default function FavoritesNav() {
+
+export default function FavoritesNav({favorites, activateBtns, deleteToFavorites, setIsBtnActive}) {
   const [isOpen, setIsOpen] = useState(false);
-  // const dispatch = useDispatch();
 
-  const fakepers = simulacionCharacters.CharacterFakeData;
-
+  const handledeleteToFavs= (name)=>{
+    setIsBtnActive(false)
+    deleteToFavorites(name);
+  }
+  
   return (
     <>
       <nav className="favoritesNav">
@@ -45,25 +45,28 @@ export default function FavoritesNav() {
             : "favoritesNav__favorites isActive"
         }
       >
-        {fakepers &&
-          fakepers.map((persnje) => (
-            <div className="favoritesNav__favorites__list" key={persnje.id}>
+
+       {(favorites) ? favorites.map((favorite,index) => (
+            <div className="favoritesNav__favorites__list" key={index}>
               <img
-                src={persnje.img}
+                src={`${favorite[index].image}`}
                 className="favoritesNav__favorites_list--img"
                 alt=" "
               />
               <span className="favoritesNav__favorites_list--name">
-               {persnje.characterName}
+               {favorites[index].name}
               </span>
               <img
                 src={trash}
                 className="favoritesNav__favorites_list--icon"
                 alt=""
-                // delOneFromFavorites={() => dispatch(delOneFromFavorites(name, true))}
+                onClick={()=> handledeleteToFavs(favorites[index].name)}
               />
             </div>
-          ))}
+          ))
+        
+        : <div className="favoritesNav__favorites__list favoritesNav__favorites_list--name">Agrega elementos a favoritos</div>
+        }
       </section>
     </>
   );

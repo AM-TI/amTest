@@ -1,77 +1,65 @@
 import { ADD_TO_FAVORITES, REMOVE_TO_FAVORITES } from "../Redux/Types";
 
-import Luna from "../Assets/icons/luna.png";
-
-/////fake data simulacionCharacters
-// export let initCharacterState = {
-//   characters: [],
-//   favorites: [],
-// };
-
-export const simulacionCharacters = {
-  CharacterFakeData: [
-    { id: 1, img: { Luna }, characterName: "Luna Lovegood" },
-    { id: 2, img: { Luna }, characterName: "Luna Lovegood" },
-    { id: 3, img: { Luna }, characterName: "Luna Lovegood" },
-  ],
-  characterlist: [],
+export const initCharacterState = {
+  characters: [],
+  favorites: [],
 };
 
-export function favoriteReducer(state = simulacionCharacters, action) {
-  switch (action.type) {
-    case ADD_TO_FAVORITES: {
-      
+console.log(initCharacterState.characters);
 
+///get de base de datos para traer los personajes para el filtrado de favs
+export function favoritesState(getDatabase) {
+  initCharacterState.characters = getDatabase;
+}
+
+export function favoriteReducer(state = [], action) {
+  switch (action.type) {
+    case ADD_TO_FAVORITES:
+      {
+        let currentCharacter = state.characters.find(
+          (character) => character.name === action.payload
+        );
+
+        if (state.favorites.length >= 0 && state.favorites.length < 4) {
+          return {
+            ...state,
+            favorites: [...state.favorites, currentCharacter],
+          };
+        }
+        if (state.favorites.length === 5) {
+          //  console.log((currentFavorites.shift()).push(currentCharacter))
+          return { ...state, favorites: [...state.favorites.pop()] };
+        }
+        if (state.favorites.length === 5) {
+          return {
+            ...state,
+            favorites: [...state.favorites.pop()],
+          };
+        }
+      }
+
+      break;
+    case REMOVE_TO_FAVORITES: {
+      return {
+        ...state,
+        favorites: state.favorites.filter(
+          (character) => character.name !== action.payload
+        ),
+      };
     }
+
     default:
       return state;
   }
 }
 
-// export function favoritesState(initDatabase) {
-//   initCharacterState.characters = initDatabase;
-// }
+// let currentFavorites = [];
 
-// export function favoriteReducer(state = initCharacterState, action) {
-//   switch (action.type) {
-//     case ADD_TO_FAVORITES: {
-//       let FavCharacter = state.characters.find(
-//         (character) => character.name === action.payload
-//       );
+// let currentCharacter = [];
 
-//       let characterExistInFavorites = state.favorites.find(
-//         (character) => character.name === FavCharacter.name
-//       );
+// const {favorites}= state;
+// if(state){
+//   console.log(action.payload);
+//   currentFavorites = [favorites, currentCharacter];
 
-//       if (state.favorites.length >= 0 && state.favorites.length < 5) {
-//         return characterExistInFavorites
-//           ? {
-//               ...state,
-//               favorites: state.favorites.map((character) =>
-//                 character.name === FavCharacter.name
-//                   ? { ...character, quantity: character.quantity + 1 }
-//                   : character
-//               ),
-//             }
-//           : {
-//               ...state,
-//               favorites: [...state.favorites, { ...FavCharacter, quantity: 1 }],
-//             };
-//       } else {
-//         return { ...state, favorites: [...state.favorites] };
-//       }
-//     }
-
-//     case REMOVE_TO_FAVORITES: {
-//       return {
-//         ...state,
-//         favorites: state.favorites.filter(
-//           (character) => character.name !== action.payload
-//         ),
-//       };
-//     }
-
-//     default:
-//       return state;
-//   }
 // }

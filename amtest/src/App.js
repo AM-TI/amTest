@@ -1,6 +1,6 @@
-import MainView from '../src/Components/MainView';
 import { Provider } from 'react-redux';
-import store from '../src/Redux/Store';
+import store from './Redux/Store/index.js';
+import MainView from '../src/Components/MainView';
 import '../src/Sass/_GlobalStyles.scss';
 
 function App() {

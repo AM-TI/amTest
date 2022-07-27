@@ -1,11 +1,11 @@
 import { ADD_TO_FAVORITES, REMOVE_TO_FAVORITES } from "../Redux/Types";
 
-export const addToFavorites = (characterName) => ({
+export const addToFavorites = (name) => ({
   type: ADD_TO_FAVORITES,
-  payload: characterName,
+  payload: name,
 });
 
-export const delOneFromFavorites = (characterName, all = false) => ({
+export const deleteToFavorites = (name, all = false) => ({
   type: REMOVE_TO_FAVORITES,
-  payload: characterName,
+  payload: name,
 });
