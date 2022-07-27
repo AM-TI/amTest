@@ -1,7 +1,7 @@
 $phone: 0px;
 $tablet: 768px;
 $desktop: 1200px;
-$LGdesktop: 2500px;
+$LGdesktop: 3500px;
 
 @mixin phone {
   @media only screen and (min-width: $phone) and (max-width: $desktop) {

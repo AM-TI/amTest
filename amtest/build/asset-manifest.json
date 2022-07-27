@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d10b9eb5.css",
+    "main.js": "/static/js/main.6acfbbf8.js",
+    "static/js/787.0a609a01.chunk.js": "/static/js/787.0a609a01.chunk.js",
+    "static/media/Background-Howarts.jpg": "/static/media/Background-Howarts.98d61ecfdf666d45c220.jpg",
+    "static/media/HarryPotter-Logo.svg": "/static/media/HarryPotter-Logo.8f12e92cee0a688e96003e2bbfa24e49.svg",
+    "static/media/Trash.svg": "/static/media/Trash.db2c6ed9a51a929112e37f37e314feee.svg",
+    "static/media/User-fill-add.svg": "/static/media/User-fill-add.35836a4f2b5953e623a25798d6d4a8c2.svg",
+    "static/media/BookMark-W-Fill.svg": "/static/media/BookMark-W-Fill.211b91ee775073612503b88d43d9c566.svg",
+    "static/media/BookMark-G-Outine.svg": "/static/media/BookMark-G-Outine.83525494168102cc1ea7bba054db7379.svg",
+    "static/media/BookMark-G-Fill.svg": "/static/media/BookMark-G-Fill.0d79d13f3e871ea9e6f95b437234d05e.svg",
+    "index.html": "/index.html",
+    "static/media/Close.svg": "/static/media/Close.2470e84f38327756834dc195e84d7abe.svg",
+    "main.d10b9eb5.css.map": "/static/css/main.d10b9eb5.css.map",
+    "main.6acfbbf8.js.map": "/static/js/main.6acfbbf8.js.map",
+    "787.0a609a01.chunk.js.map": "/static/js/787.0a609a01.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d10b9eb5.css",
+    "static/js/main.6acfbbf8.js"
+  ]
+}
