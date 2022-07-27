@@ -5,40 +5,26 @@ export const initCharacterState = {
   favorites: [],
 };
 
-console.log(initCharacterState.characters);
-
 ///get de base de datos para traer los personajes para el filtrado de favs
 export function favoritesState(getDatabase) {
   initCharacterState.characters = getDatabase;
 }
 
 export function favoriteReducer(state = [], action) {
+  let currentCharacter = [];
+  if (state.length > 0) {
+    currentCharacter = state.characters.find(
+      (character) => character.name === action.payload
+    );
+  }
   switch (action.type) {
-    case ADD_TO_FAVORITES:
-      {
-        let currentCharacter = state.characters.find(
-          (character) => character.name === action.payload
-        );
-
-        if (state.favorites.length >= 0 && state.favorites.length < 4) {
-          return {
-            ...state,
-            favorites: [...state.favorites, currentCharacter],
-          };
-        }
-        if (state.favorites.length === 5) {
-          //  console.log((currentFavorites.shift()).push(currentCharacter))
-          return { ...state, favorites: [...state.favorites.pop()] };
-        }
-        if (state.favorites.length === 5) {
-          return {
-            ...state,
-            favorites: [...state.favorites.pop()],
-          };
-        }
-      }
-
-      break;
+    case ADD_TO_FAVORITES: {
+      let fav = [...state.favorites, currentCharacter];
+      return {
+        ...state,
+        favorites: fav,
+      };
+    }
     case REMOVE_TO_FAVORITES: {
       return {
         ...state,
@@ -62,4 +48,21 @@ export function favoriteReducer(state = [], action) {
 //   console.log(action.payload);
 //   currentFavorites = [favorites, currentCharacter];
 
+// }
+
+// if (state.favorites.length >= 0 && state.favorites.length < 4) {
+//   return {
+//     ...state,
+//     favorites: [...state.favorites, currentCharacter],
+//   };
+// }
+// if (state.favorites.length === 5) {
+//   //  console.log((currentFavorites.shift()).push(currentCharacter))
+//   return { ...state, favorites: [...state.favorites.pop()] };
+// }
+// if (state.favorites.length === 5) {
+//   return {
+//     ...state,
+//     favorites: [...state.favorites.pop()],
+//   };
 // }

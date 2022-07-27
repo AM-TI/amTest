@@ -14,14 +14,33 @@ function App() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
   const { favorites } = state.favorites;
+
+
   /// duplicado de la data para primer renderizado
   const [charactersData, setCharactersData] = useState([]);
   const [rol, setRol] = useState("");
   /////btns Actions
   const [isBtnActive, setIsBtnActive] = useState();
 
-  // let api = helperHttp();  //UseEffect para hacer el get de la API
+  let api = helperHttp(); 
   let charactersUrl = "http://localhost:4000/characters";
+
+ ///  post a api para actualizar los characteres
+  const UpdateCharacters = (db) => {
+    let options = { body: db, headers: { 'content-type': 'application/json' } };
+    // console.log(db);
+    api.post(charactersUrl, options).then((res) => {
+      console.log(res);
+      if (!res.err) {
+        setCharactersData([...setCharactersData, res]);
+        console.log("data actualizada!")
+      } else {
+       console.log("oh no, ocurrio un error!")
+      }
+    });
+  };
+
+ //UseEffect para hacer el get de la API
   useEffect(() => {
     helperHttp()
       .get(charactersUrl)
@@ -48,6 +67,7 @@ function App() {
       <img src={BGHowarts} className="mainView__background" alt="Howarts" />
       <div className="mainView__background"></div>
       <FavoritesNav
+        UpdateCharacters={UpdateCharacters}
         favorites={favorites}
         deleteToFavorites={() => dispatch(deleteToFavorites())}
         setIsBtnActive={setIsBtnActive}
@@ -56,9 +76,9 @@ function App() {
       <SortNav rol={rol} setRol={setRol} />
 
       <section className="mainCharacters">
-        {charactersData.map((character, index) => (
+        {charactersData.map((character) => (
           <CardsOfCharacters
-            key={index}
+          key={character.name}
             character={character}
             setIsBtnActive={setIsBtnActive}
             isBtnActive={isBtnActive}

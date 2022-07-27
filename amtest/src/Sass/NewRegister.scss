@@ -1,0 +1,236 @@
+@use "../Sass/GlobalStyles";
+@use "./Mixins";
+
+.registerForm__hide {
+  display: none;
+}
+.registerForm__isActive {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.FormRegister {
+  width: 80vw;
+  height: 50vh;
+  background-color: #ffff;
+  position: absolute;
+  top: 25vh;
+  left: 10vw;
+  z-index: 3;
+  border-radius: 15px;
+  @include Mixins.flex(column, none, center);
+
+  &__Header {
+    @include Mixins.flex(row, space-between, center);
+    width: 90%;
+    height: 15%;
+
+    &__close {
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+    }
+    &__title {
+      color: GlobalStyles.$text-color-G;
+      font-size: GlobalStyles.$Title-size;
+      font-weight: GlobalStyles.$Bold;
+    }
+  }
+
+  &__Form {
+    @include Mixins.flex(column, flex-start, center);
+    width: 90%;
+    height: 80%;
+
+    &__inputs {
+      @include Mixins.flex(column, flex-start, center);
+      width: 100%;
+      height: 50%;
+
+
+      &__Section {
+        @include Mixins.flex(row, space-between, center);
+        width: 100%;
+        height: 50%;
+
+        &__group {
+          @include Mixins.flex(column, flex-start, none);
+          width: 47%;
+          height: 85%;
+          // background-color: rgb(198, 199, 248);
+
+          &__label {
+            color: GlobalStyles.$text-color-G;
+            font-size: GlobalStyles.$CharacerName-size;
+            font-weight: GlobalStyles.$Regular;
+            margin-bottom: 0.5rem;
+          }
+
+          &__input {
+            height: 90%;
+            color: GlobalStyles.$text-color-G;
+            font-size: GlobalStyles.$CharacerName-size;
+            font-weight: GlobalStyles.$Regular;
+            padding: 0 25px;
+            background: rgba(#263238, 0.06);
+            border: none;
+            border-bottom: 3px solid rgba(#263238, 0.38);
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            outline: none;
+          }
+        }
+      }
+    }
+    &__checks {
+      @include Mixins.flex(row, space-between, flex-start);
+      width: 100%;
+      height: 20%;
+
+      &__Section2 {
+        @include Mixins.flex(column, flex-start, baseline);
+        width: 47%;
+        height: 100%;
+
+        &__label {
+          color: GlobalStyles.$text-color-G;
+          font-size: GlobalStyles.$CharacerName-size;
+          font-weight: GlobalStyles.$Regular;
+          margin: 0.5rem 0;
+        }
+
+        &__group {
+          @include Mixins.flex(row, flex-start, center);
+          width: 100%;
+          height: 30%;
+
+
+          &__radio {
+            width: 2rem;
+            margin-right: 1rem;
+
+            &__label {
+              color: GlobalStyles.$text-color-G;
+              font-size: GlobalStyles.$CharacerName-size;
+              font-weight: GlobalStyles.$Regular;
+              margin-right: 20%;
+            }
+          }
+        }
+      }
+    }
+
+    &__inputFile {
+      @include Mixins.flex(row, flex-start, center);
+      width: 100%;
+      height: 10%;
+
+      &__label {
+        color: GlobalStyles.$text-color-G;
+        font-size: GlobalStyles.$CharacerName-size;
+        font-weight: GlobalStyles.$Regular;
+        margin-right: 2rem;
+      }
+    }
+    &__button {
+      @include Mixins.button;
+    }
+  }
+}
+// .register {
+//   width: 728px;
+//   background-color: #ffffff;
+//   border-radius: 15px;
+//   padding: 0 30px 30px;
+//   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+//   &__header {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+//   &__title {
+//     font-size: Globals.$title--form;
+//     font-weight: Globals.$bold;
+//     margin-bottom: 0px;
+//   }
+//   &__close {
+//     border: none;
+//     background-color: transparent;
+//   }
+
+//   &__img {
+//     width: 40px;
+//     height: 40px;
+//   }
+
+//   &__form {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+
+//     .input {
+//       width: 310px;
+//       height: 74px;
+//       border-top-left-radius: 7px;
+//       border-top-right-radius: 7px;
+//       border: none;
+//       font-size: 16px;
+//       padding: 0 24px;
+//       background: rgba(#263238, 0.06);
+//       border-bottom: 2px solid rgba(#263238, 0.38);
+//       outline: none;
+//     }
+//     .form-group {
+//       display: flex;
+//       flex-direction: column;
+//       margin: 20px 0 0 0;
+//     }
+//   }
+// }
+
+// .label {
+//   margin: 10px 0;
+//   font-size: Globals.$rol;
+// }
+
+// .form-group__radio {
+//   display: flex;
+//   flex-direction: row;
+//   align-self: flex-start;
+//   width: 310px;
+// }
+
+// .form-group__label {
+//   margin: 0 0 0 25px;
+//   font-size: Globals.$form;
+//   font-weight: Globals.$regular;
+// }
+
+// .btn-save {
+//   margin: 32px 0 0 0;
+//   padding: 24px 144px;
+//   font-size: Globals.$button--filter;
+//   letter-spacing: 3px;
+//   background-color: Globals.$button--background--color;
+//   border: solid 3px Globals.$button--border--color;
+//   color: #ffffff;
+
+//   &:hover {
+//     background-color: rgba(107, 99, 181, 0.6);
+//     transition: 0.7s;
+//   }
+
+//   &:active {
+//     background-color: Globals.$button--border--color;
+//   }
+// }
