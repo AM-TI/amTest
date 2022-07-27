@@ -1,0 +1,35 @@
+@use '../../Sass\ Styles/GlobalStyles.scss';
+
+.favoritesNav{
+width: GlobalStyles.$fav-nav-widthSize;
+height: GlobalStyles.$fav-nav-hieghtSize;
+background-color: GlobalStyles.$fav-nav-color;
+display: inline-flex;
+border-radius: 0 0 15px 15px;
+position: absolute;
+top: 0;
+right: 10%;
+}
+
+.favoritesNav__btn{
+  width: 50%;
+  background-color: GlobalStyles.$fav-nav-color;
+  border-radius: 0 0 15px 15px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-style: none;
+}
+
+.favoritesNav__btn__text{
+  color: GlobalStyles.$text-color-W;
+  font-size: GlobalStyles.$Regular-size;
+  padding: GlobalStyles.$fav-nav-padding;
+}
+
+
+.favoritesNav__btn__icon{
+  width: 1rem;
+  margin-left: .5rem;
+}
