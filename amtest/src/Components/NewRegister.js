@@ -18,7 +18,7 @@ export default function NewRegister({ setIsOpenForm }) {
   });
   
   const PostUpdateJson = () => {
-    let charactersUrl = "http://localhost:4000/characters";
+    let charactersUrl = "https://amtest-harry-potter-api.herokuapp.com/characters";
     fetch(charactersUrl, {
       method: "POST",
       headers: {

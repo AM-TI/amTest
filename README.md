@@ -1,16 +1,19 @@
-<h1 align='center'> Harry Potter App Tech Test AM </h1>
+<h1 align='center'> Harry Potter App -Tech Test AM </h1>
 
----
+<p align="center">Project Deploy:</p>
+<p align="center">In progress</p>
 
-Project Deploy:
-In process...
-
----
+<div align='center'>
 
 ![Shows VIiews](https://raw.githubusercontent.com/AnnaLizarraga/Assets/main/Aseets%20AmTest/AMTest-web.JPG)
-Fig 1. Vista web del proyecto.
 
-<p align="center">
+<h5 align='center'>Fig 1. Vista web del proyecto.</h5>
+
+</div>
+
+<br></br>
+
+<div align="center">
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" /></a>
@@ -18,8 +21,9 @@ Fig 1. Vista web del proyecto.
 <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
 <a href="https://sass-lang.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/sass-colored.svg" width="36" height="36" alt="Sass" /></a>
 <a href="https://redux.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/redux-colored.svg" width="36" height="36" alt="Redux" /></a>
-</p>
----
+
+</div>
+<br></br>
 
 <h1 align='center'>Harry Potter App</h1>
 
@@ -28,25 +32,25 @@ Fig 1. Vista web del proyecto.
 
 ---
 
-<h4 align='center'>Planeación</h4>
+<h2 align='center' >Planeación</h2>
+<br></br>
 <p align='center'>
 Este proyecto se planeó con los fundamentos de la metodología SCRUM, en la cual por medio de historias de usuario de organiza el trabajo y se hace un control de versiones estables mediante git.
 La planeación me ayudo a tener una vista más global del proyecto y me permitió definir las historias de usuario alcanzables para el proyecto y tener un flujo mas organizado.
 </p>
 
+<br></br>
+
 ---
 
-<h3 align='center'>Para inicializar el proyecto sigue estos pasos</h3>
+<h2 align='center'>Para inicializar el proyecto sigue estos pasos</h2>
 
-<p align='center'>
+<br></br>
 1.- Debemos descargar, clonar o hacer un fork de este repositorio de Github , copiando el link que se despliega de el botón de CODE (color verde) en la parte superior derecha de la pagina.
 
-<p>Puedes clonarlo en VisualStudio Code, en la sección de clonar repositorio </p>
+Puedes clonarlo en VisualStudio Code, en la sección de clonar repositorio
 
-<p>
 La segunda forma sería descargar el ZIP del proyecto, descomprimirlo y abrirlo con tu editor de código favorito
-</p>
-</p>
 
 2.- De deben instalar todas las dependencias del proyecto, para ello, abre la terminal de tu editor de código, y debes entrar a la carpeta de la aplicación con el siguiente comando: - cd amtest -, una vez dentro de la carpeta escribe el comando - npm install -
 
@@ -54,12 +58,14 @@ La segunda forma sería descargar el ZIP del proyecto, descomprimirlo y abrirlo 
 
 4.- Debemos correr la aplicación de React, para ello en una nueva terminal (sin cerrar la anterior), entra a la carpeta del proyecto con el comando - cd amtest - una vez dentro de la carpeta escribe el comando – npm start -
 
-- En mi caso no por problemas técnicos no pude realizar test, pero espero que en estos días los incluya en el proyecto.
+En mi caso no por problemas técnicos no pude realizar test, pero espero que en estos días los incluya en el proyecto.
+
+<br></br>
 
 ---
 
-<h3 align='center'>Lo que más me gusto del proyecto</h3>
-
+<h2 align='center'>Lo que más me gusto del proyecto</h2>
+<br></br>
 👩🏻 Aprender a utilizar nuevas tecnologías fue un gran reto para mi implementar Redux, tenía conocimiento básico de el pero no había tenido la oportunidad de implementarlo.
 
 👩🏻 Hacer estilos en SASS fue lo que más disfrute de este proyecto, ya que me encanta dale estilos a mis aplicaciones y encontré una manera muy fácil e intuitiva de hacerlo, además incluí la metodología de BEM para la nomenclatura y es algo con lo que me voy a quedar para mejorar mi calidad de código.
@@ -68,9 +74,12 @@ La segunda forma sería descargar el ZIP del proyecto, descomprimirlo y abrirlo 
 
 👩🏻 Darme cuenta de realmente ver mis conocimientos en el desarrollo de esta aplicación y ver de manera tangible lo rápido que aprendo no tiene precio para mí. Es una gran experiencia en la cual me llevo lo mejor, un autoconocimiento que pocas veces se puede hacer notar.
 
+<br></br>
+
 ---
 
-<h3 align='center'>¿Si hubiera tenido más tiempo ¿qué hubiera mejorado o qué más habría hecho?</h3>
+<h2 align='center'>¿Si hubiera tenido más tiempo ¿qué hubiera mejorado o qué más habría hecho?</h2>
+<br></br>
 
 💻 Me hubiera gustado poder darle los detalles que quería en este proyecto, soy muy visual y me encanta la parte de estilos de los proyectos y no haber logrado algunos detalles me hace querer seguir aprendiendo.
 
@@ -82,25 +91,46 @@ La segunda forma sería descargar el ZIP del proyecto, descomprimirlo y abrirlo 
 
 💻 Me habría gustado hacer Test ya que por falta de tiempo y detalles técnicos con mi computadora que retrasaron mi planeación no pude realizarlos, quería hacer test unitarios aplicando React Testing Library o Jest, ya que tengo conocimiento básico de ellos.
 
+<br></br>
+
 ---
 
-<h3 align='center'>Pain point o bug con el que te hayas encontrado y como lo solucionaste</h3>
-
+<h2 align='center'>Pain point o bug con el que te hayas encontrado y como lo solucionaste</h2>
+<br></br>
 🖥 El Pain Point más importante para mi fué hacer la estructura correcta para la comunicación de REDUX ya que me genero bastantes detalles por la falta de conocimiento del mismo. Además me ayudo a reforzar y profundizar en javascript para hacer una correcta deconstrucción del estado y hacer duplicados de información para poder manipularla.
 
 🖥 Otro Pain Point que tuve fué la implementación correcta de Sass, ya que de primera instancia solo aplique variables, pero profundizando mas en este procesador implemente la metodología BEM para sacarle el mayor provecho al mismo.
 
 🖥 También se me presento un Pain Point en cuanto a guardar correctamente los archivos en la base de datos, se pueden visualizar de manera local pero no se hace una conexión correcta con la db, estoy investigando que fue lo que sucedió, espero resolverlo a la brevedad.
 
+🖥 De ultima instancia, el deploy de la aplicacion fue el reto mas grande, ya que al realizar el deploy solose vio la pagina por el tiempo que duro visual abierto y tuve que crear una aplicacion en Heroku para desplegar la base de datos y ese si fue un tema que no me habia tocado realizar por ende, estoy en proceso de que se haga el despliegue correctamente.
 
-***
-<h3 align='center'>Vistas Finales de la app</h3>
+<br></br>
+
+---
+
+<h2 align='center'>Vistas Finales de la app</h2>
+<br></br>
+
+<div align="center">
 
 ![Shows VIiews](https://raw.githubusercontent.com/AnnaLizarraga/Assets/main/Aseets%20AmTest/AMTest-web.JPG)
-Fig 2. Vista web del proyecto.
+
+<h5 align='center'>Fig 2. Vista web del proyecto.</h5>
+<br></br>
+</div>
+
+<div align="center">
 
 ![Shows VIiews](https://raw.githubusercontent.com/AnnaLizarraga/Assets/main/Aseets%20AmTest/AMTest-tablet.JPG)
-Fig 3. Vista tablet del proyecto.
+
+<h5 align='center'>Fig 3. Vista tablet del proyecto.</h5>
+<br></br>
+</div>
+
+<div align="center">
 
 ![Shows VIiews](https://raw.githubusercontent.com/AnnaLizarraga/Assets/main/Aseets%20AmTest/AMTest-movil.JPG)
-Fig 4. Vista web del proyecto.
+
+<h5 align='center'>Fig 4. Vista web del proyecto.</h5>
+</div>

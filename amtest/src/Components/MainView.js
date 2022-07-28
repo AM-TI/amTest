@@ -23,7 +23,7 @@ function App() {
   const [isBtnActive, setIsBtnActive] = useState();
 
   // let api = helperHttp(); 
-  let charactersUrl = "http://localhost:4000/characters";
+  let charactersUrl = "https://amtest-harry-potter-api.herokuapp.com/characters";
  //UseEffect para hacer el get de la API
   useEffect(() => {
     helperHttp()
